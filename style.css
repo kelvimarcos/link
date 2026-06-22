@@ -71,7 +71,7 @@ body {
 }
 
 .topbar__perfil img {
-    width: 180px;
+    width: 140px;
     height: auto;
     display: block;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, .5));
@@ -126,7 +126,7 @@ body {
 /* ---------- Painel de links ---------- */
 .panel {
     position: relative;
-    margin: -120px auto 0;
+    margin: -150px auto 0;
     width: 100%;
     background: linear-gradient(180deg, var(--panel) 0%, #262a35 100%);
     border-radius: 40px;
@@ -261,6 +261,32 @@ body {
     background: rgba(0, 0, 0, .9);
 }
 
+.popup-mute {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background .15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.popup-mute:hover,
+.popup-mute:active {
+    background: rgba(0, 0, 0, .9);
+}
+
 .popup-video {
     width: 100%;
     display: block;
@@ -273,7 +299,7 @@ body {
 /* Telas pequenas (≤360px) */
 @media (max-width: 360px) {
     .topbar { padding: 10px 14px; }
-    .topbar__perfil img { width: 100px; }
+    .topbar__perfil img { width: 130px; }
     .topbar__share img { width: 32px; }
     .cards { padding: 20px 14px; gap: 14px; }
     .hero__welcome { font-size: 14px; }
@@ -282,7 +308,7 @@ body {
 /* Mobile médio (361–440px) */
 @media (max-width: 440px) {
     .topbar { padding: 12px 16px; }
-    .topbar__perfil img { width: 120px; }
+    .topbar__perfil img { width: 140px; }
     .topbar__share img { width: 36px; }
     .cards { padding: 24px 16px 20px; gap: 16px; }
     .panel { border-radius: 32px; margin-top: -100px; }
@@ -317,7 +343,7 @@ body {
     .footer { display: none; }
 
     .topbar { padding: 18px 24px; }
-    .topbar__perfil img { width: 160px; }
+    .topbar__perfil img { width: 150px; }
     .topbar__share img { width: 44px; }
     .cards { padding: 28px 24px 24px; gap: 20px; }
 }
