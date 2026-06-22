@@ -78,7 +78,7 @@ body {
 }
 
 .topbar__share img {
-    width: 6px;
+    width: 80px;
     height: auto;
     display: block;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .4));
@@ -94,7 +94,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 10%;
+    bottom: 28%;
     text-align: center;
     line-height: 1.25;
     font-size: clamp(15px, 5.5vw, 20px);
@@ -126,7 +126,7 @@ body {
 /* ---------- Painel de links ---------- */
 .panel {
     position: relative;
-    margin: -60px auto 0;
+    margin: -120px auto 0;
     width: 100%;
     background: linear-gradient(180deg, var(--panel) 0%, #262a35 100%);
     border-radius: 40px;
@@ -285,7 +285,7 @@ body {
     .topbar__perfil img { width: 120px; }
     .topbar__share img { width: 36px; }
     .cards { padding: 24px 16px 20px; gap: 16px; }
-    .panel { border-radius: 32px; margin-top: -50px; }
+    .panel { border-radius: 32px; margin-top: -100px; }
 }
 
 /* Tablet e desktop (≥769px) */
