@@ -6,15 +6,20 @@ const closeBtn = document.getElementById('close-popup');
 function openPopup() {
     popup.classList.add('active');
     document.body.style.overflow = 'hidden';
+    video.play().catch(() => {});
 }
 
 function closePopup() {
     popup.classList.remove('active');
     video.pause();
+    video.currentTime = 0;
     document.body.style.overflow = '';
 }
 
+const heroPhoto = document.querySelector('.hero__photo');
+
 openBtn.addEventListener('click', openPopup);
+heroPhoto.addEventListener('click', openPopup);
 closeBtn.addEventListener('click', closePopup);
 
 document.addEventListener('keydown', (e) => {
