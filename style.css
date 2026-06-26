@@ -347,8 +347,8 @@ body {
     .hero__welcome { font-size: 14px; }
 }
 
-/* Mobile (até 768px) */
-@media (max-width: 768px) {
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
     .topbar { padding: 12px 16px; }
     .topbar__perfil img { width: 140px; }
     .topbar__share img { width: 40px; }
@@ -356,8 +356,8 @@ body {
     .panel { border-radius: 32px; margin-top: -130px; }
 }
 
-/* Tablet e desktop (≥769px) */
-@media (min-width: 769px) {
+/* Tablet e desktop (≥768px) */
+@media (min-width: 768px) {
     .container {
         width: 100%;
         max-width: 1200px;
@@ -367,6 +367,7 @@ body {
         flex-direction: column;
     }
 
+    /* Hero cresce para empurrar o conteúdo para a parte inferior */
     .hero {
         flex: 1 1 0;
         min-height: 0;
@@ -374,30 +375,41 @@ body {
         line-height: 0;
     }
 
+    /* Foto cobre 100vh inteiros como fundo */
     .hero__photo {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         object-fit: cover;
         object-position: center top;
     }
 
-    .hero__welcome { bottom: 28%; top: auto; font-size: clamp(16px, 1.6vw, 22px); }
+    /* Arrow rente ao panel — espaçamento mínimo */
+    .hero__welcome {
+        bottom: 10px;
+        top: auto;
+        font-size: clamp(16px, 1.6vw, 22px);
+    }
 
-    /* Área do panel reduzida */
     .panel {
         flex: 0 0 auto;
         position: relative;
         z-index: 5;
         width: 100%;
-        max-width: 380px;
-        margin: -130px auto 0;
-        border-radius: 28px;
+        max-width: 300px;
+        margin: 0 auto;
+        border-radius: 22px;
     }
 
-    .cards { padding: 14px 18px 12px; gap: 10px; }
+    .cards { padding: 10px 14px 8px; gap: 7px; }
 
-    .social { flex: 0 0 auto; padding: 8px 0 2px; }
-    .footer  { flex: 0 0 auto; padding: 6px 0 12px; }
+    .social { flex: 0 0 auto; padding: 15px 0 15px; position: relative; z-index: 5;}
+    .footer  { position: relative; z-index: 5; }
+
+    .footer  { flex: 0 0 auto; padding: 4px 0 12px; font-size: 12px; }
+    .footer__work { font-size: 10px; }
 
     .topbar { padding: 18px 24px; }
     .topbar__perfil img { width: 150px; }
