@@ -189,7 +189,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 16px;
-    padding: 40px 0 40px;
+    padding: 30px 0 25px;
 }
 
 .social__btn {
@@ -237,14 +237,18 @@ body {
 }
 
 .footer__work a {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.171);
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
 }
 
 .footer__text {
     font-size: 11px;
     opacity: .5;
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10;
 }
 
 /* ---------- Popup de vídeo ---------- */
