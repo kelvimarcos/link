@@ -125,7 +125,7 @@ body {
 /* ---------- Painel de links ---------- */
 .panel {
     position: relative;
-    margin: -160px auto 0;
+    margin: -140px auto 0;
     width: 100%;
     background: linear-gradient(180deg, var(--panel) 0%, #262a35 100%);
     border-radius: 40px;
