@@ -3,6 +3,10 @@ const video    = popup.querySelector('.popup-video');
 const openBtn  = document.getElementById('open-popup');
 const closeBtn = document.getElementById('close-popup');
 const muteBtn  = document.getElementById('mute-btn');
+const animabtn = document.querySelector('.topbar__perfil');
+
+
+
 
 function openPopup() {
     popup.classList.add('active');
@@ -54,3 +58,36 @@ shareBtn.addEventListener('click', async () => {
         } catch (_) {}
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!animabtn) return;
+
+    animabtn.style.transformOrigin = 'center';
+
+    function balancar() {
+        const animacao = animabtn.animate(
+            [
+                { transform: 'rotate(0deg)' },
+                { transform: 'rotate(-6deg)' },
+                { transform: 'rotate(6deg)' },
+                { transform: 'rotate(-4deg)' },
+                { transform: 'rotate(4deg)' },
+                { transform: 'rotate(0deg)' }
+            ],
+            {
+                duration: 600,
+                easing: 'ease-in-out'
+            }
+        );
+
+        animacao.finished
+            .then(() => {
+                setTimeout(balancar, 3000);
+            })
+            .catch(() => {});
+    }
+
+    setTimeout(balancar, 500);
+});
+
+
