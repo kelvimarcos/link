@@ -28,7 +28,6 @@ body {
 /* ---------- Container ---------- */
 .container {
     width: 100%;
-    max-width: 440px;
     background-color: var(--navy);
     position: relative;
     overflow: hidden;
@@ -348,8 +347,8 @@ body {
     .hero__welcome { font-size: 14px; }
 }
 
-/* Mobile médio (361–440px) */
-@media (max-width: 440px) {
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
     .topbar { padding: 12px 16px; }
     .topbar__perfil img { width: 140px; }
     .topbar__share img { width: 40px; }
