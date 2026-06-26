@@ -185,11 +185,44 @@ body {
     border-radius: 42px;
 }
 
+/* ---------- Social ---------- */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px 0 4px;
+}
+
+.social__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: var(--white);
+    transition: background .2s ease, transform .15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.social__btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social__btn:hover,
+.social__btn:active {
+    background: rgba(255, 255, 255, .18);
+    transform: scale(1.08);
+}
+
 /* ---------- Footer ---------- */
 .footer {
     text-align: center;
     font-size: 14px;
-    padding: 20px 0 24px;
+    padding: 12px 0 24px;
     color: var(--white);
     opacity: .6;
 }
@@ -197,6 +230,16 @@ body {
 .footer a {
     color: inherit;
     text-decoration: none;
+}
+
+.footer__work {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.footer__work a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 /* ---------- Popup de vídeo ---------- */
@@ -316,31 +359,27 @@ body {
 
 /* Tablet e desktop (≥769px) */
 @media (min-width: 769px) {
-    /* Container fixo na viewport — sem scroll */
-    .container { max-width: 100%; overflow: hidden; height: 100vh; }
+    /* Container acompanha a largura da imagem pc */
+    .container { max-width: 1200px; overflow: hidden; height: auto; }
 
-    /* Hero preenche toda a tela */
-    .hero { height: 100vh; }
-    .hero__photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    /* Imagem exibe em largura natural */
+    .hero { height: auto; }
+    .hero__photo { width: 100%; height: auto; object-fit: unset; object-position: unset; }
 
-    /* Texto sobe para não conflitar com o painel */
-    .hero__welcome { bottom: auto; top: 14%; font-size: clamp(18px, 2.5vw, 26px); }
+    /* Saudação relativa à imagem, igual ao mobile */
+    .hero__welcome { bottom: 28%; top: auto; font-size: clamp(16px, 2vw, 24px); }
 
-    /* Painel flutua sobre a parte inferior do hero */
+    /* Painel centralizado com largura limitada, mesmo comportamento do mobile */
     .panel {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(480px, calc(100% - 80px));
-        margin: 0;
-        max-width: none;
-        border-radius: 44px;
-        z-index: 10;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        max-width: 520px;
+        margin: -120px auto 0;
+        border-radius: 40px;
     }
-
-    /* Footer oculto no desktop */
-    .footer { display: none; }
 
     .topbar { padding: 18px 24px; }
     .topbar__perfil img { width: 150px; }

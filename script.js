@@ -20,10 +20,7 @@ function closePopup() {
     document.body.style.overflow = '';
 }
 
-const heroPhoto = document.querySelector('.hero__photo');
-
 openBtn.addEventListener('click', openPopup);
-heroPhoto.addEventListener('click', openPopup);
 closeBtn.addEventListener('click', closePopup);
 
 muteBtn.addEventListener('click', () => {
