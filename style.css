@@ -125,7 +125,7 @@ body {
 /* ---------- Painel de links ---------- */
 .panel {
     position: relative;
-    margin: -150px auto 0;
+    margin: -160px auto 0;
     width: 100%;
     background: linear-gradient(180deg, var(--panel) 0%, #262a35 100%);
     border-radius: 40px;
@@ -189,7 +189,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 16px;
-    padding: 20px 0 4px;
+    padding: 40px 0 40px;
 }
 
 .social__btn {
@@ -353,35 +353,53 @@ body {
     .topbar__perfil img { width: 140px; }
     .topbar__share img { width: 40px; }
     .cards { padding: 24px 16px 20px; gap: 16px; }
-    .panel { border-radius: 32px; margin-top: -100px; }
+    .panel { border-radius: 32px; margin-top: -130px; }
 }
 
 /* Tablet e desktop (≥769px) */
 @media (min-width: 769px) {
-    /* Container acompanha a largura da imagem pc */
-    .container { max-width: 1200px; overflow: hidden; height: auto; }
-
-    /* Imagem exibe em largura natural */
-    .hero { height: auto; }
-    .hero__photo { width: 100%; height: auto; object-fit: unset; object-position: unset; }
-
-    /* Saudação relativa à imagem, igual ao mobile */
-    .hero__welcome { bottom: 28%; top: auto; font-size: clamp(16px, 2vw, 24px); }
-
-    /* Painel centralizado com largura limitada, mesmo comportamento do mobile */
-    .panel {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
+    .container {
         width: 100%;
-        max-width: 520px;
-        margin: -120px auto 0;
-        border-radius: 40px;
+        max-width: 1200px;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
+
+    .hero {
+        flex: 1 1 0;
+        min-height: 0;
+        position: relative;
+        line-height: 0;
+    }
+
+    .hero__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .hero__welcome { bottom: 28%; top: auto; font-size: clamp(16px, 1.6vw, 22px); }
+
+    /* Área do panel reduzida */
+    .panel {
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        max-width: 380px;
+        margin: -130px auto 0;
+        border-radius: 28px;
+    }
+
+    .cards { padding: 14px 18px 12px; gap: 10px; }
+
+    .social { flex: 0 0 auto; padding: 8px 0 2px; }
+    .footer  { flex: 0 0 auto; padding: 6px 0 12px; }
 
     .topbar { padding: 18px 24px; }
     .topbar__perfil img { width: 150px; }
     .topbar__share img { width: 44px; }
-    .cards { padding: 28px 24px 24px; gap: 20px; }
 }
